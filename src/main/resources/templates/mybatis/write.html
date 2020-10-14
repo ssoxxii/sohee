@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head::commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/mybatis/write.css">
+</head>
+<body>
+	<!-- header -->
+	<section id="top-menu" class="view-width">
+		<div class="top ">
+			<h1>top menu</h1>
+			<div class="top-wrap flex-between">
+				<a class="logo" href="/">
+					<img alt="home" src="/images/ssoxxi_logo_white.svg">
+				</a>
+				<span>Mybatis Board</span>
+			</div>
+		</div>
+	</section>
+	<!-- main -->
+	<main>
+		<h1>mybatis로 처리한 게시글</h1>
+		<div class="view-width">
+			<section id="page-tit">
+				<h1>페이지제목</h1>
+				<p>board 게시판 글쓰기</p>
+			</section>
+			<section id="service">
+				<h1>게시글 내용</h1>
+				<div class="wrap">
+					<form class="write-form" action="/mybatis/write" method="post">
+						<input name="writer" type="hidden" value="guest">
+						<input name="subject" placeholder="제목을 입력하세요">
+						<textarea rows="10" cols="100" name="content" placeholder="내용을 입력하세요"></textarea>
+						<button class="btn-style" type="submit">등록</button>
+					</form>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- footer -->
+	<th:block th:insert="/commons/footer::footer"></th:block>
+</body>
+</html>

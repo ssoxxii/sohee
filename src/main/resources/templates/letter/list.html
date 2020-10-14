@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="/css/letter/list.css">
+</head>
+<body>
+	<!-- header -->
+	<section id="top-menu" class="view-width">
+		<div class="top ">
+			<h1>top menu</h1>
+			<div class="top-wrap flex-between">
+				<a class="logo" href="/">
+					<img alt="home" src="/images/ssoxxi_logo_white.svg">
+				</a>
+				<span>JPA Letter</span>
+			</div>
+		</div>
+	</section>
+	<!-- main -->
+	<main>
+		<section id="letter" class="view-width">
+			<h1>게시글 리스트</h1>
+			<div class="wrap">
+				<section id="page-tit">
+					<h1>페이지제목</h1>
+					<p>JPA Letter</p>
+				</section>
+				<div class="btn">
+					<a href="/letter/write">글쓰기</a>
+				</div>
+				<ul class="tit flex">
+					<li>no</li>
+					<li>내용</li>
+					<li>작성자</li>
+					<li>작성일</li>
+				</ul>
+				<ul class="contents flex" th:each="dto:${jpaList}" >
+					<li th:text="${dto.no}"></li>
+					<li>[[${dto.contents}]]</li>
+					<li>[[${dto.writer}]]</li>
+					<li>[[${dto.reg_date}]]</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+	<!-- footer -->
+	<section id="footer">
+		<h1>footer</h1>
+		<div class="footer-wrap">
+			<div class="foot">
+				<a class="logo flex-center" href="/">
+					<img alt="home" src="/images/ssoxxi_logo_white.svg">
+				</a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

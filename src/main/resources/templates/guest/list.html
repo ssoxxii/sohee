@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head::commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/guest/list.css">
+</head>
+<body>
+	<!-- header -->
+	<section id="top-menu" class="view-width">
+		<div class="top ">
+			<h1>top menu</h1>
+			<div class="top-wrap flex-between">
+				<a class="logo" href="/">
+					<img alt="home" src="/images/ssoxxi_logo_white.svg">
+				</a>
+				<span>Guest Book</span>
+			</div>
+		</div>
+	</section>
+	<!-- main -->
+	<main>
+		<h1>방명록</h1>
+		<div class="view-width">
+			<section id="page-tit">
+				<h1>페이지제목</h1>
+				<p>방명록(Guest Book)</p>
+			</section>
+			<script type="text/javascript">
+				$(function(){
+					/* 로딩시 리스트 가져오기 */
+					getCommList();
+					
+					$("#commBtn").click(commReg);//클릭 이벤트 등록
+				});
+				
+				function getCommList(){
+					var commNo=$("#commNo").val();
+					var page= $("#page_no").val();
+					$.ajax({
+						url:"/guest/listItem/"+page, 
+						type:"get",
+						
+						success: function(result){
+				      		$("#guestBook .view").html(result);
+				    	 }
+					});
+				}
+				
+				function commReg(){
+					
+					var user=$("#user").val();
+					var content=$("#commContent").val();
+					//var commNo=$("#commNo").val();
+					$.ajax({
+						url: "/guest/reg",
+						type: "post",
+						data: {"writer": user, "content":content},
+						success: function(result){
+							getCommList();
+							$("#commContent").val(""); // ""로 셋팅
+				    	 }
+					}); 
+					
+				}
+			</script>
+			<section id="guestBook">
+				<h1>게시글 내용</h1>
+				<div class="write">
+					<input type="hidden" id="user" value="user">
+					<textarea rows="1" cols="100" id="commContent" placeholder="방명록을 남겨보세요"></textarea>
+					<button type="button" class="btn" id="commBtn">등록</button>
+				</div>
+				<input type="hidden" id="page_no" th:value="${page}">
+				<div class="view">
+					
+				</div>
+				
+			</section>
+		</div>
+	</main>
+	<th:block th:insert="/commons/footer::footer"></th:block>
+</body>
+</html>

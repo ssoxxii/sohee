@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xiaomi.mapper.MybatisMapper">
+	<select id="mybatislist" resultType="xiaomi.domain.dto.MybatisDto">
+		select * from board
+		order by no desc
+	</select>
+	<insert id="save">
+		insert into board(subject, count, writer, user_ip, reg_date, content )
+		values(#{subject}, #{count}, #{writer}, #{user_ip}, now(), #{content})
+	</insert>
+	<select id="detail" resultType="xiaomi.domain.dto.MybatisDto">
+		select * from board
+		where no=#{no}
+		order by no desc
+	</select>
+	<delete id="delete">
+		delete from board
+		where no=#{no}
+	</delete>
+	<update id="update">
+		update board set subject=#{subject}, content=#{content}
+		where no=#{no}
+	</update>
+	<select id="findAllDesc" resultType="xiaomi.domain.dto.MybatisDto" resultSetType="SCROLL_SENSITIVE" >
+		select * from board 
+		order by no desc
+		<!-- limit 10 offset 0 -->
+	</select>
+	<select id="getCountOfRows" resultType="int">
+		select count(*) from board
+	</select>
+</mapper>

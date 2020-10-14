@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+</head>
+<body>
+	<header th:fragment="header">
+		<section>
+			<h1>상단영역</h1>
+			<div id="header-wrap">
+				<div class="entry-board flex-between view-width">
+					<ul class="external-entries flex">
+						<li class="entry pipe">
+							<a href="#">INTERNATIONAL</a>
+						</li>
+						<li class="entry pipe">
+							<a href="/jpa/list/1">JPA BOARD</a>
+						</li>
+						<li class="entry pipe">
+							<a href="#">MIUI</a>
+						</li>
+					</ul>
+					<div class="account-info">
+						<ul class="flex">
+							<th:block th:if="${session.user != null}">
+								<div>
+									<span>[[${session.user.name}]]님!</span>
+									<a href="/user/logout" class="pipe">로그아웃</a>
+								</div>
+							</th:block>
+							<th:block th:if="${session.user == null}">
+								<li class="entry pipe">
+									<a href="/user/login">SIGN IN</a>
+								</li>
+							</th:block>
+							<li class="entry pipe">
+								<a href="/user/signup">SIGN UP</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<nav id="site-navi">
+			<h1>top-navi</h1>
+			<div class="navi-wrap flex-between">
+				<div class="milogo">
+					<a href="/">
+						<img alt="logo" src="/images/ssoxxi_logo_white.svg">
+					</a>
+				</div>
+				<div id="navi">
+					<ul class="navi-list flex">
+						<li class="navis">
+							<a href="#">Mi Phones</a>
+						</li>
+						<li class="navis">
+							<a href="#">POCOPHONE</a>
+						</li>
+						<li class="navis">
+							<a href="#">Redmi Phones</a>
+						</li>
+						<li class="navis">
+							<a href="/letter/list">JPA Letter</a>
+						</li>
+						<li class="navis">
+							<a href="/mybatis/list/1">Mybatis Board</a>
+						</li>
+						<li class="navis">
+							<a href="/file/upload">File Board</a>
+						</li>
+						<li class="navis">
+							<a href="/guest/list/1">Guest Book</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section id="home-main" >
+			<h1>home-slide</h1>
+			<div class="home-slide">
+				<ul class="slide flex">
+					<li class="item1">
+					</li>
+					<li class="item2"></li>
+					<li class="item3"></li>
+					<li class="item4"></li>
+					<li class="item5"></li>
+				</ul>
+				<script type="text/javascript">
+					var viewSize=$("#home-main .home-slide").width(); //슬라이드 너비	
+					$(function(){
+						sizeCheck();
+						$(window).resize(sizeCheck);
+						$("#home-main .btn .prev").click(filePrev);
+						$("#home-main .btn .next").click(fileNext);
+					});
+					
+					function sizeCheck(){
+						var ea=$("#home-main .home-slide .slide li").length;//배너 갯수
+						$("#home-main .home-slide .slide").css("width", viewSize*ea);//전체 배너 길이 재설정
+					}
+					
+					function filePrev(){
+						var first=$("#list-view .home-slide .slide li:first-child");
+						var last=$("#list-view .home-slide .slide li:last-child");
+						first.before(last);//last를 first 전으로
+						
+						$("#home-main .home-slide .slide").css("left", -viewSize); //왼쪽으로 길이만큼 이동
+						$("#home-main .home-slide .slide").animate({left: 0 }, 1000);//애니메이션 효과
+					}
+					
+					function fileNext(){
+						$("#home-main .home-slide .slide").animate({left: -viewSize }, 1000, 
+								function(){
+									var first=$("#home-main .home-slide .slide li:first-child");
+									var last=$("#home-main .home-slide .slide li:last-child");
+									last.after(first); //first를 last 뒤로
+									$("#home-main .home-slide .slide").css("left",0);
+								}
+						);
+					}
+				
+				</script>
+				<div class="btn flex-between">
+					<img class="prev" alt="prev" src="/images/ico_prev1_x1.png">
+					<img class="next" alt="next" src="/images/ico_next1_x1.png">
+				</div>
+			</div>
+		</section>
+	</header>
+</body>
+</html>

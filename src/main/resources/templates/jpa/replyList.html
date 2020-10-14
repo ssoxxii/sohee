@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<ul th:each="list:${replyList}">
+		<li>[[${list.writer}]]</li>
+		<li>[[${list.reg_date}]]</li>
+		<li>[[${list.content}]]</li>
+	</ul>
+</body>
+</html>

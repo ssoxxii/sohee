@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head::commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/files/write.css">
+</head>
+<body>
+	<!-- header -->
+	<section id="top-menu" class="view-width">
+		<div class="top ">
+			<h1>top menu</h1>
+			<div class="top-wrap flex-between">
+				<a class="logo" href="/">
+					<img alt="home" src="/images/ssoxxi_logo_white.svg">
+				</a>
+				<span>Files</span>
+			</div>
+		</div>
+	</section>
+	<main>
+		<h1>이벤트 이미지 등록</h1>
+		<div id="file-wrap" class="view-width">
+			<section id="page-tit">
+				<h1>페이지제목</h1>
+				<p>File Upload</p>
+			</section>
+			<section id="board">
+				<h1>게시글 내용</h1>
+				<div class="wrap">
+					<!-- enctype이 있어야 파일 전송 가능 -->
+					<!-- method: 전송 방식, action: 전송 목적지, enctype: 전송되는 데이터 형식 -->
+					<form class="write-form" action="/file/reg" method="post" enctype="multipart/form-data">
+						<input name="file" type="file" title="image file">
+						<input class="title" name="t_text" placeholder="title">
+						<input class="explanation" name="d_text" placeholder="explanations">
+						<button class="btn-style" type="submit">등록</button>
+					</form>
+				</div>
+			</section>
+		</div>
+	</main>
+	<th:block th:insert="/commons/footer::footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="/commons/head::commonHead"></th:block>
+	<link rel="stylesheet" type="text/css" href="/css/jpa/list.css">
+</head>
+<body>
+	<!-- header -->
+	<section id="top-menu" class="view-width">
+		<div class="top ">
+			<h1>top menu</h1>
+			<div class="top-wrap flex-between">
+				<a class="logo" href="/">
+					<img alt="home" src="/images/ssoxxi_logo_white.svg">
+				</a>
+				<span>JPA Board</span>
+			</div>
+		</div>
+	</section>
+	<!-- main -->
+	<main>
+		<h1>JPA를 이용한 게시글 예제</h1>
+		<div class="view-width">
+			<section id="page-tit">
+				<h1>페이지제목</h1>
+				<p>JPA를 이용한 게시글 예제</p>
+			</section>
+			<section id="board">
+				<h1>게시글 내용</h1>
+				<div class="wrap">
+					<div class="btn">
+						<a href="/jpa/write">글쓰기</a>
+					</div>
+					<ul class="tit flex">
+						<li>no</li>
+						<li>제목</li>
+						<li>조회수</li>
+						<li>작성자</li>
+						<li>작성일</li>
+					</ul>
+					<ul class="contents flex" th:each="dto:${jpaList}" >
+						<li th:text="${dto.no}"></li>
+						<!-- @{/jpa/1001(page=1)} :: /jpa/1001?page=1 -->
+						<li><a th:href="@{|/jpa/${dto.no}|(page=${page})}" >[[${dto.subject}]]</a></li>
+						<li>[[${dto.count}]]</li>
+						<li>[[${dto.writer}]]</li>
+						<li>[[${dto.reg_date}]]</li>
+					</ul>
+					<!-- 페이징 -->
+					<script th:inline="javascript">
+						$(function(){
+							//var tag="#pagging>span:nth-child("+[[${page}]]+")>a";
+							var tag="#pagging>span:nth-child([(${page})])>a";
+							$(tag).addClass("select");
+						});
+					</script>
+					<div id="pagging" class="flex-center pagging">
+						<th:block th:if="${pageInfo.from > 1}">
+							<a href="/jpa/list/1" >&lt;&lt;</a>
+							<a th:href="|/jpa/list/${pageInfo.from - 1}|" >&lt;</a>
+						</th:block>
+						
+						<span th:each="page :${#numbers.sequence( pageInfo.from , pageInfo.to )}">
+							<a th:href="|/jpa/list/${page}|" >[[${page}]]</a>
+						</span>
+						
+						<th:block th:if="${pageInfo.total != pageInfo.to}">
+							<a th:href="|/jpa/list/${pageInfo.to + 1}|" >&gt;</a>
+							<a th:href="|/jpa/list/${pageInfo.total}|" >&gt;&gt;</a>
+						</th:block>
+					</div>
+					<!-- 검색  -->
+					<div class="flex-center">
+						<select name="sesarchType">
+							<option value="subject" class="op1">제목</option>
+							<option value="contents" class="op2">내용</option>
+							<option value="writer" class="op3">작성자</option>
+						</select>
+						<input type="text" name="searchText" th:value="${param.searchText}">
+						<input type="submit" value="검색">
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<th:block th:insert="/commons/footer::footer"></th:block>
+</body>
+</html>

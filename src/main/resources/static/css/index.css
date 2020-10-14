@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+@import url("common.css");
+
+/* /////////////////////////////////////////// */
+/* //////visual.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+
+
+
+/* sub main */
+#sub-main{
+	position: relative;
+	top: 10px;
+	height: 260px;
+}
+	
+#sub-main .sub-wrap{
+	top: 770px;
+	height: 400px;
+}
+
+/* products */
+#poduct{
+	min-width: 1226px;
+	display: block;
+	top: 1100px;
+	
+}
+
+#product .title p{
+	display:inline-block;
+	text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    color: #616161;
+    margin: 38px auto;
+    
+}
+
+/* bottom */
+#main-bottom .bottom-wrap p.btm-tit{
+	font-size: 30px;
+	font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+

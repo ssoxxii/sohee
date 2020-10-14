@@ -1,0 +1,157 @@
+@charset "UTF-8";
+@import url("../common.css");
+
+/* /////////////////////////////////////////// */
+/* //////files/list.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+/* top menu */
+#top-menu{
+	position: absolute;
+	top:0;
+	width:100%;
+	background-color: #212121;
+	color: #b0b0b0;
+	height: 56px;
+}
+#top-menu .top .top-wrap{
+	width:1226px;
+	position: relative;
+	top: 0;
+	margin: 0 auto;
+}
+#top-menu span{
+	color: #b0b0b0;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 56px;
+	vertical-align: middle;
+}
+
+#page-tit p{
+	position: relative;
+	top: 60px;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 40px 0;
+}
+/*logo*/
+#top-menu .top .logo{
+	text-align: right;	
+}
+#top-menu .top .logo img{
+	width: 112px;
+	height: 56px;
+}
+
+/* files */
+#board{
+	margin-bottom: 40px;
+}
+
+#board ul{
+	border-bottom: 1px solid #eaecef;
+	padding: 0.7em 0 0.5em;
+}
+#board ul.tit{
+	border-top: 2px solid #eaecef;
+	padding: 0.8em 0 0.5em;
+	font-weight: 700;
+}
+#board ul li{
+	flex: 1;
+}
+/* btn */
+#board .wrap .btn{
+	text-align: right;
+	margin-bottom: 10px;
+	position: relative;
+}
+#board .wrap .btn a{
+	background-color: #eb6715;
+	padding: 0.5em 2em;
+	border-radius: 5%;
+	display: inline-block;
+	color: #fff;
+	font-weight: 700;
+}
+#board .contents li input{
+	display: none;
+}
+
+.file-img{
+	display:inline-block;
+	width: 200px;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+} 
+
+#board>.wrap{
+	display: block;
+}
+
+/* mobile 버전: 화면 너비 1205px 이하인 경우 처리 */
+@media screen and (max-width:1205px){
+	#list-view{
+		position: relative;
+		height: 520px;
+		overflow: hidden;
+	}
+	#list-view ul{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#list-view ul li{
+		height: 520px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	#list-view .btn{
+		position: absolute;
+		width:100%;
+		padding: 0 52px;
+		top: 234px;
+		left: 0;
+	}
+	#list-view .btn:hover{
+		cursor: pointer;
+	}
+}
+
+/* PC 버전 : 화면 너비 1206px 이상인 경우 처리*/
+@media  screen and (min-width:1206px){
+	main>div{
+		width: 1180px;
+		margin: 0 auto;
+	}
+	#list-view{
+		position: relative;
+		height: 520px;
+		overflow: hidden;
+	}
+	#list-view ul{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#list-view ul li{
+		min-width: 1180px;
+		height: 600px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	#list-view .btn{
+		position: absolute;
+		width:100%;
+		padding: 0 52px;
+		top: 234px;
+		left: 0;
+	}
+	#list-view .btn:hover{
+		cursor: pointer;
+	}
+}

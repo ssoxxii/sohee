@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<ul th:each="list:${commList}" class="flex">
+		<li>[[${list.writer}]]</li>
+		<li>[[${list.reg_date}]]</li>
+		<li>[[${list.content}]]</li>
+	</ul>
+	<div class="pagging flex-center">
+	
+		<!-- prev -->
+		<th:block th:if="${pageInfo.from > 1}">
+			<a href="/guest/list/1" >&lt;&lt;</a>
+			<a th:href="|/guest/list/${pageInfo.from - 1}|" >&lt;</a>
+		</th:block>
+		
+		<!-- page numbs -->
+		<th:block th:each="page : ${#numbers.sequence(pageInfo.from, pageInfo.to)}"><!--  ${#numbers.sequence(1,5)} == {1,2,3,4,5} -->
+			<a th:href="|/guest/list/${page}|">[[${page}]]</a>	
+		<th:block>
+		
+		<!-- next -->
+		<th:block th:if="${pageInfo.total != pageInfo.to}">
+			<a th:href="|/guest/list/${pageInfo.to + 1}|" >&gt;</a>
+			<a th:href="|/guest/list/${pageInfo.total}|" >&gt;&gt;</a>
+		</th:block>
+	</div>
+</html>

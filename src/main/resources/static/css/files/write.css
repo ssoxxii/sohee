@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@import url("../common.css");
+
+/* ////////////// */
+/* files/write.css */
+/* ////////////// */
+
+/* top menu */
+#top-menu{
+	position: absolute;
+	top:0;
+	width:100%;
+	background-color: #212121;
+	color: #b0b0b0;
+	height: 56px;
+}
+#top-menu .top .top-wrap{
+	width:1226px;
+	position: relative;
+	top: 0;
+	margin: 0 auto;
+}
+#top-menu span{
+	color: #b0b0b0;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 56px;
+	vertical-align: middle;
+}
+/*logo*/
+#top-menu .top .logo{
+	text-align: right;	
+}
+#top-menu .top .logo img{
+	width: 112px;
+	height: 56px;
+}
+
+#page-tit p{
+	font-size: 24px;
+	font-weight: 700;
+	padding: 40px 0;
+}
+#board{
+	margin-bottom: 40px;
+}
+
+/* 글쓰기 부분 */
+#file-wrap{
+	position: relative;
+	top: 40px;
+}
+#board .wrap .write-form>*{
+	display: block;
+	margin-bottom: 15px;
+	width: 500px;
+	border-style: 1px solid #000;
+	
+}
+#board .write-form input.title{
+	height: 40px;
+}
+#board .write-form input.explanation{
+	height: 80px;
+}
+
+/*button*/
+#board .write-form .btn-style{
+	width: max-content;
+	margin-top: 10px;
+	text-align: right;
+	background-color: #ff6700;
+	padding: 0.5em 2em;
+	border-radius: 5%;
+	display: inline-block;
+	color: #fff;
+	font-weight: 700;
+}

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+@import url("../common.css");
+
+/* /////////////////////////////////////////// */
+/* //////guest/list.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+
+/* top menu */
+#top-menu{
+	position: absolute;
+	top:0;
+	width:100%;
+	background-color: #212121;
+	color: #b0b0b0;
+	height: 56px;
+}
+#top-menu .top .top-wrap{
+	width:1226px;
+	position: relative;
+	top: 0;
+	margin: 0 auto;
+}
+#top-menu span{
+	color: #b0b0b0;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 56px;
+	vertical-align: middle;
+}
+
+#page-tit p{
+	position: relative;
+	top: 60px;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 40px 0;
+	border-bottom: 1px solid #e9e9e9;
+}
+/*logo*/
+#top-menu .top .logo{
+	text-align: right;	
+}
+#top-menu .top .logo img{
+	width: 112px;
+	height: 56px;
+}
+
+
+/* btn */
+#board .wrap .btn{
+	text-align: right;
+	margin-bottom: 10px;
+	position: relative;
+}
+#board .wrap .btn a{
+	background-color: #ff6700;
+	padding: 0.5em 2em;
+	border-radius: 5%;
+	display: inline-block;
+	color: #fff;
+	font-weight: 700;
+}
+/* comment reg */
+#guestBook{
+	margin-bottom: 40px; 
+	position: relative;
+	top: 80px;
+	
+}
+#guestBook .write textarea{
+	padding: 0.4em;
+	
+}
+
+#guestBook .write .btn{
+	margin-top: 10px;
+	text-align: right;
+	background-color: #ff6700;
+	padding: 0.5em 2em;
+	border-radius: 5%;
+	display: inline-block;
+	color: #fff;
+	font-weight: 700;
+}
+
+/* comment view */
+#guestBook .view li{
+	border-bottom: 1px solid #e9e9e9;
+}

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@import url("../common.css");
+
+/* /////////////////////////////////////////// */
+/* //////mybatis/list.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+
+/* top menu */
+#top-menu{
+	position: absolute;
+	top:0;
+	width:100%;
+	background-color: #212121;
+	color: #b0b0b0;
+	height: 56px;
+}
+#top-menu .top .top-wrap{
+	width:1226px;
+	position: relative;
+	top: 0;
+	margin: 0 auto;
+}
+#top-menu span{
+	color: #b0b0b0;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 56px;
+	vertical-align: middle;
+}
+
+#page-tit p{
+	position: relative;
+	top: 60px;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 40px 0;
+}
+/*logo*/
+#top-menu .top .logo{
+	text-align: right;	
+}
+#top-menu .top .logo img{
+	width: 112px;
+	height: 56px;
+}
+
+
+/* service */
+#service{
+	margin-bottom: 40px;
+}
+
+#service .contents{
+	border-bottom: 1px solid #eaecef;
+	padding: 0.7em 0 0.5em;
+}
+#service .tit{
+	border-top: 2px solid #eaecef;
+	padding: 0.8em 0 0.5em;
+	font-weight: 700;
+}
+#service .tit li:nth-child(1),
+#service .contents li:nth-child(1){
+	flex: 1;
+}
+#service .tit li:nth-child(2),
+#service .contents li:nth-child(2){
+	flex: 6;
+}
+#service .tit li:nth-child(3),
+#service .contents li:nth-child(3){
+	flex: 1;
+}
+#service .tit li:nth-child(4),
+#service .contents li:nth-child(4){
+	flex: 2;
+}
+#service .tit li:nth-child(5),
+#service .contents li:nth-child(5){
+	flex: 2;
+}
+
+#service .wrap .btn{
+	position: relative;
+	text-align: right;
+	margin-bottom: 10px;
+}
+#service .wrap .btn a{
+	background-color: #ff6700;
+	padding: 0.5em 2em;
+	border-radius: 5%;
+	display: inline-block;
+	color: #fff;
+	font-weight: 700;
+}
+/* pagging */
+.pagging a{
+	display: inline-block;
+	width:40px;
+	height:40px;
+	border: 1px solid #ff6700;
+	text-align: center;
+	line-height: 40px;
+	margin: 40px 10px;
+}
+.pagging a:hover {
+	background-color: #ff6700;
+	color: #fff;
+}
+
+.pagging a.select {
+	background-color: #ff6700;
+	color: #fff;
+}

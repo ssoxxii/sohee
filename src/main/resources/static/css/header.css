@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/* /////////////////////////////////////////// */
+/* //////header.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+header{
+	top:0;
+	left:0;
+	width:100%;
+	z-index: 100000;
+	min-width: 1226px;
+	min-height: 840px;
+}
+#header-wrap{
+	top:0;
+	width:100%;
+	background-color: #212121;
+	color: #b0b0b0;
+	height: 40px;
+}
+/* entry board */
+#header-wrap .entry-board{
+	vertical-align: middle;
+}
+#header-wrap .entry-board span{
+	color: #b0b0b0;
+	font-size: 12px;
+	line-height: 40px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#header-wrap a{
+	color: #b0b0b0;
+	font-size: 12px;
+	line-height: 40px;
+}
+
+#header-wrap a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+
+/* site-navi */
+#site-navi {
+	min-width: 1226px;
+	min-height: 88px;
+	z-index: 1;
+	background-color: #000;
+}
+
+#site-navi .navi-wrap {
+	width: 1226px;
+	height: 88px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* logo */
+#site-navi .navi-wrap .milogo img {
+	display: inline-block;
+	margin-top: 14px;
+	width: 112px;
+	height: 56px;
+}
+
+/* navi list */
+#navi .navi-list>li{
+	line-height: 88px;
+	vertical-align: middle;
+}
+#navi .navi-list>li>a {
+	padding: 0 25px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+/* home slide */
+#home-main{
+	z-index: -1;
+	top: 40px;
+	width: 100%;
+}
+
+#home-main .home-slide {
+	height: 780px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1920px;
+}
+
+#home-main .home-slide .slide{
+	position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+#home-main .home-slide .slide>li{
+	display: block;
+	width: 1920px;
+	height: 770px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto;
+}
+
+#home-main .home-slide .slide>li.item1{
+	background-image: url("/images/banner1.jpg");
+}
+#home-main .home-slide .slide>li.item2{
+	background-image: url("/images/banner2.jpg");
+}
+#home-main .home-slide .slide>li.item3{
+	background-image: url("/images/banner3.jpg");
+}
+#home-main .home-slide .slide>li.item4{
+	background-image: url("/images/banner4.jpg");
+}
+#home-main .home-slide .slide>li.item5{
+	background-image: url("/images/banner5.jpg");
+}
+
+/* slide btn */
+#home-main .home-slide .btn{
+	padding: 0 60px;
+}
+#home-main .home-slide .btn:hover{
+	cursor: pointer;
+}
+
